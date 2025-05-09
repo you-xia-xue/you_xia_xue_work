@@ -1,0 +1,20 @@
+{
+    "type":"minecraft:crafting_shaped",
+    "category": "misc",
+    "pattern": [
+        "###",
+        "#s#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "testmod:feng_xiao_jin_item"
+        },
+        "s": {
+            "item": "testmod:feng_xiao_jin_item"
+        }
+    },
+    "result":{
+        "item": "testmod:feng_xiao_jin_block"
+    }
+}

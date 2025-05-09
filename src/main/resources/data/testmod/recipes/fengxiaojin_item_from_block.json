@@ -1,0 +1,13 @@
+{
+    "type":"minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        {
+            "item": "testmod:feng_xiao_jin_block"
+        }
+    ],
+    "result":{
+        "item": "testmod:feng_xiao_jin_item",
+        "count": 9
+    }
+}

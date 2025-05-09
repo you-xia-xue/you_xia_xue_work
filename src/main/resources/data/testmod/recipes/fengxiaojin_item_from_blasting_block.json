@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.7,
+  "group": "feng_xiao_jin_item",
+  "ingredient": {
+    "item": "testmod:feng_xiao_jin_block"
+  },
+  "result": "testmod:feng_xiao_jin_item"
+}

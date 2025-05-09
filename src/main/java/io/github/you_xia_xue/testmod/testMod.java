@@ -1,6 +1,7 @@
 package io.github.you_xia_xue.testmod;
 
 import com.mojang.logging.LogUtils;
+import io.github.you_xia_xue.testmod.block.ModBlocks;
 import io.github.you_xia_xue.testmod.item.ModCreativeModTabs;
 import io.github.you_xia_xue.testmod.item.Moditems;
 import net.minecraft.world.item.CreativeModeTab;
@@ -28,10 +29,11 @@ public class testMod {
 
         public testMod(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
-
+        //这个应该是令xx东西被载入吧
         ModCreativeModTabs.register(modEventBus);
 
         Moditems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -51,8 +53,8 @@ public class testMod {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-            if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){//应该是把mod物品加入到创造模式物品栏中
-                event.accept(Moditems.Excalibur);
+            if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){//把mod物品加入到创造模式标签栏中，这里对于的是原材料
+                event.accept(Moditems.Feng_Xiao_Jin_Item);
             }
     }
 

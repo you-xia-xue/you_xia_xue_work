@@ -1,4 +1,6 @@
 {
   "item.testmod.excalibur": "誓约胜利之剑",
-  "creativetab.test_tab":"命运"
+  "creativetab.test_tab":"命运",
+  "block.testmod.feng_xiao_jin_block": "枫小槿方块",
+  "item.testmod.feng_xiao_jin_item":"枫小槿物品"
 }
