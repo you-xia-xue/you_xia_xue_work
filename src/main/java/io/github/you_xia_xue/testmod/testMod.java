@@ -1,6 +1,10 @@
 package io.github.you_xia_xue.testmod;
 
 import com.mojang.logging.LogUtils;
+import io.github.you_xia_xue.testmod.item.ModCreativeModTabs;
+import io.github.you_xia_xue.testmod.item.Moditems;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -22,9 +26,12 @@ public class testMod {
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
-        public testMod(FMLJavaModLoadingContext context)
-    {
+        public testMod(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
+
+        ModCreativeModTabs.register(modEventBus);
+
+        Moditems.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -43,8 +50,10 @@ public class testMod {
     }
 
     // Add the example block item to the building blocks tab
-    private void addCreative(BuildCreativeModeTabContentsEvent event)
-    {
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+            if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){//应该是把mod物品加入到创造模式物品栏中
+                event.accept(Moditems.Excalibur);
+            }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
